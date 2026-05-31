@@ -1,0 +1,662 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Iyawo Institute | 52-Week Global Priesthood Course</title>
+
+  <meta name="description" content="Iyawo Institute is a 52-week SwamiG Institute course indexing Ilekes, Warriors, Hand of Ifa, and Priesthood Crowning to the equinox and solstice cycle." />
+
+  <style>
+    :root {
+      --bg: #120b17;
+      --panel: #211628;
+      --panel2: #2e2038;
+      --gold: #d7aa45;
+      --cream: #fff3d2;
+      --muted: #d8c9df;
+      --purple: #4b245f;
+      --deep-purple: #2b1535;
+      --red: #7d2626;
+      --green: #2f7454;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(0,0,0,.34);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(215,170,69,.22), transparent 34%),
+        radial-gradient(circle at top right, rgba(88,40,115,.33), transparent 42%),
+        linear-gradient(180deg, #120b17 0%, #1d1224 56%, #0f0814 100%);
+      color: var(--cream);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(18, 11, 23, .91);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(215,170,69,.26);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--gold);
+      font-size: .9rem;
+    }
+
+    .brand small {
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-transform: none;
+      font-size: .78rem;
+      margin-top: 3px;
+    }
+
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .9rem;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 18px 40px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5.7vw, 5rem);
+      line-height: 1.02;
+      color: var(--white);
+      text-shadow: 0 9px 30px rgba(0,0,0,.34);
+    }
+
+    .subtitle {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.18rem;
+      max-width: 760px;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, rgba(46,32,56,.96), rgba(33,22,40,.94));
+      border: 1px solid rgba(215,170,69,.32);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #2e2038;
+    }
+
+    .caption {
+      margin: 12px 6px 2px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #1a1010;
+      border: 1px solid rgba(215,170,69,.65);
+      box-shadow: 0 10px 25px rgba(0,0,0,.28);
+    }
+
+    .btn.secondary {
+      color: var(--gold);
+      background: transparent;
+    }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 18px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(1.85rem, 4vw, 3rem);
+      line-height: 1.1;
+      color: var(--white);
+    }
+
+    .section-lead {
+      max-width: 880px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: rgba(33,22,40,.93);
+      border: 1px solid rgba(215,170,69,.22);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.34rem;
+      line-height: 1.2;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(215,170,69,.46);
+      color: var(--gold);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .season {
+      border-left: 5px solid var(--gold);
+    }
+
+    .spring { border-left-color: #43a36e; }
+    .summer { border-left-color: #d7aa45; }
+    .autumn { border-left-color: #b26b36; }
+    .winter { border-left-color: #dbe8ff; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .week-row {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(46,32,56,.7);
+    }
+
+    .week-row strong {
+      color: var(--gold);
+    }
+
+    .links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .links span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: .92rem;
+    }
+
+    .notice {
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(215,170,69,.34);
+      background: linear-gradient(135deg, rgba(215,170,69,.14), rgba(75,36,95,.22));
+    }
+
+    footer {
+      margin-top: 48px;
+      padding: 32px 18px;
+      text-align: center;
+      border-top: 1px solid rgba(215,170,69,.26);
+      background: rgba(0,0,0,.20);
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 44px;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .week-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    SAME-REPO FILES:
+    Put this index.html in the same repo/folder as:
+    KhemeticIfaTreeOfLife.png
+    module-01.html through module-52.html, if you create individual lesson pages later.
+
+    Current external SGI pages are preserved in the navigation.
+  -->
+
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        Iyawo Institute
+        <small>SwamiG Institute • Ifá • Isésé • Orisha</small>
+      </a>
+
+      <div class="navlinks">
+        <a href="https://swamiginstitute.com">SGI Home</a>
+        <a href="https://16cowrie.com">16Cowrie</a>
+        <a href="https://4cowrieshell.com">4Cowrie</a>
+        <a href="https://myopele.com">MyOpele</a>
+        <a href="https://iamiyawo.com">Iyawo Track</a>
+        <a href="https://iamaborisha.com">Aborisha</a>
+        <a href="#apply">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Global Priesthood • 52 Week Course Roadmap</div>
+
+        <h1>Iyawo Institute 52-Week Sacred Formation</h1>
+
+        <p class="subtitle">
+          The original 16-week Modified Khemetian–Ifá Tree of Life course now becomes a
+          full 52-week priesthood formation cycle. The year is organized through four
+          seasonal gates: Ilekes at the Spring Equinox, Warriors at the Summer Solstice,
+          Hand of Ifá at the Autumn Equinox, and Priesthood Crowning at the Winter Solstice.
+        </p>
+
+        <div class="buttons">
+          <a class="btn" href="#seasonal-gates">View Seasonal Gates</a>
+          <a class="btn secondary" href="#course-map">View 52 Week Map</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <img src="KhemeticIfaTreeOfLife.png" alt="Khemetian Ifa Tree of Life course roadmap" />
+        <p class="caption">
+          Current Tree of Life roadmap image retained in the same repo as the central visual reference.
+        </p>
+      </aside>
+    </section>
+
+    <section id="mission">
+      <h2 class="section-title">From 16 Weeks to 52 Weeks</h2>
+      <p class="section-lead">
+        The 16-week roadmap remains the root image and public reference. The 52-week structure
+        gives the initiate more time to practice, reflect, demonstrate, and become accountable
+        before receiving greater spiritual responsibility.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="badge">Radical Devotion</span>
+          <h3>Auset / Yemojah</h3>
+          <p>
+            Devotion, alignment, care, restoration, humility, and sacred responsibility.
+            This current becomes visible through conduct, consistency, and relationship to community.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="badge">Words of Power</span>
+          <h3>Sekert / Olokun</h3>
+          <p>
+            Speech, mystery, depth, protection, silence, invocation, and transformation.
+            This current teaches that words must clarify, heal, protect, and align.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="badge">Infinite Wisdom</span>
+          <h3>Tehuti / Orunmila</h3>
+          <p>
+            Discernment, divination, destiny, order, memory, and spiritual intelligence.
+            This current requires the student to consult wisdom before action.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="seasonal-gates">
+      <h2 class="section-title">Solstice & Equinox Index</h2>
+      <p class="section-lead">
+        Each major initiation gate is indexed to a seasonal doorway. The initiate’s year
+        is therefore not only academic; it is cosmological, ritual, and seasonal.
+      </p>
+
+      <div class="grid grid-4">
+        <article class="card season spring">
+          <span class="badge">Spring Equinox</span>
+          <h3>Ilekes Gate</h3>
+          <p>
+            Identity, devotion, spiritual orientation, sacred belonging, and visible covenant.
+          </p>
+          <ul>
+            <li>Weeks 1–13</li>
+            <li>Root current: Radical Devotion</li>
+            <li>Theme: I belong, therefore I behave with character.</li>
+          </ul>
+        </article>
+
+        <article class="card season summer">
+          <span class="badge">Summer Solstice</span>
+          <h3>Warriors Gate</h3>
+          <p>
+            Protection, boundaries, courage, vows, accountability, and disciplined action.
+          </p>
+          <ul>
+            <li>Weeks 14–26</li>
+            <li>Root current: Words of Power</li>
+            <li>Theme: I am protected because I am disciplined.</li>
+          </ul>
+        </article>
+
+        <article class="card season autumn">
+          <span class="badge">Autumn Equinox</span>
+          <h3>Hand of Ifá Gate</h3>
+          <p>
+            Wisdom, destiny alignment, divination readiness, sacrifice, and sacred listening.
+          </p>
+          <ul>
+            <li>Weeks 27–39</li>
+            <li>Root current: Infinite Wisdom</li>
+            <li>Theme: I consult wisdom before I act.</li>
+          </ul>
+        </article>
+
+        <article class="card season winter">
+          <span class="badge">Winter Solstice</span>
+          <h3>Priesthood Crowning</h3>
+          <p>
+            Integration, elder review, ritual responsibility, public service, and crowning preparation.
+          </p>
+          <ul>
+            <li>Weeks 40–52</li>
+            <li>Root current: Royal Legacy</li>
+            <li>Theme: I carry light through the longest night.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="course-map">
+      <h2 class="section-title">52 Week Course Map</h2>
+      <p class="section-lead">
+        The 52 weeks may be taught through weekly lessons, Google Classroom posts,
+        same-repo pages, or protected modules. Each quarter contains study, practice,
+        reflection, divination, and review.
+      </p>
+
+      <div class="timeline">
+        <div class="week-row">
+          <strong>Weeks 1–4</strong>
+          <span>Orientation, SGI vows, white-cloth consciousness, Ori alignment, ancestral grounding, and daily practice.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 5–8</strong>
+          <span>Radical Devotion, Auset/Yemojah, character formation, humility, sacred relationship, and visible discipline.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 9–13</strong>
+          <span>Ilekes preparation, elder review, devotional accountability, and Spring Equinox gate completion.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 14–17</strong>
+          <span>Warrior orientation, protection, boundaries, spiritual courage, and the correct use of power.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 18–21</strong>
+          <span>Ogun, Ochosi, Eshu, Osun, vows, sacrifice, speech, correction, and disciplined action.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 22–26</strong>
+          <span>Ajagun versus Ajogun, accountability, Warrior readiness, and Summer Solstice gate completion.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 27–30</strong>
+          <span>Hand of Ifá orientation, Tehuti/Orunmila, Odu seniority, humility before wisdom, and listening practice.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 31–35</strong>
+          <span>Divination ethics, Obi and Four Cowrie foundations, Odu orientation, sacrifice logic, and journaling.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 36–39</strong>
+          <span>Wisdom demonstration, destiny alignment, Hand of Ifá review, and Autumn Equinox gate completion.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 40–43</strong>
+          <span>Priesthood responsibility, public conduct, ritual speech, sacred boundaries, and service posture.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 44–48</strong>
+          <span>Demonstration cycle: readings, offerings, reflection, correction, teaching posture, and community service.</span>
+        </div>
+
+        <div class="week-row">
+          <strong>Weeks 49–52</strong>
+          <span>Final integration, elder assessment, divination confirmation, Winter Solstice crowning gate, and next-step assignment.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="tree">
+      <h2 class="section-title">Modified Khemetian–Ifá Tree of Life</h2>
+      <p class="section-lead">
+        The Tree remains the symbolic foundation: Amen, Ausar, Heru, Tehuti, Maat,
+        Sekert, Sebek, Het-Heru, Auset, Geb, Nekhebet, Uatchet, and Sheps are taught
+        as living powers of conduct, speech, divination, ancestral alignment, and priestly responsibility.
+      </p>
+
+      <div class="notice">
+        <strong>Declaration:</strong>
+        Live what you learn. Results are the proof.
+      </div>
+    </section>
+
+    <section id="repo">
+      <h2 class="section-title">Same-Repo Page Index</h2>
+      <p class="section-lead">
+        Keep all pages and images in the same repository. The current image file should remain
+        beside this page unless you move it into an image folder and update the path.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Local Repo Files</h3>
+          <div class="links">
+            <a href="index.html">index.html <span>Main 52-week landing page</span></a>
+            <a href="KhemeticIfaTreeOfLife.png">KhemeticIfaTreeOfLife.png <span>Current roadmap image</span></a>
+            <a href="module-01.html">module-01.html <span>Optional first lesson page</span></a>
+            <a href="module-13.html">module-13.html <span>Ilekes gate review</span></a>
+            <a href="module-26.html">module-26.html <span>Warriors gate review</span></a>
+            <a href="module-39.html">module-39.html <span>Hand of Ifá gate review</span></a>
+            <a href="module-52.html">module-52.html <span>Priesthood Crowning review</span></a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Current SGI Network Pages</h3>
+          <div class="links">
+            <a href="https://swamiginstitute.com">swamiginstitute.com <span>SGI Home</span></a>
+            <a href="https://16cowrie.com">16cowrie.com <span>16 Cowrie Certification</span></a>
+            <a href="https://4cowrieshell.com">4cowrieshell.com <span>Obi / Four Cowrie</span></a>
+            <a href="https://myopele.com">myopele.com <span>Opele Tools</span></a>
+            <a href="https://iamiyawo.com">iamiyawo.com <span>Iyawo Track</span></a>
+            <a href="https://iamaborisha.com">iamaborisha.com <span>Aborisha / Orisha Pele</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="apply">
+      <h2 class="section-title">Enrollment & Integrity</h2>
+      <p class="section-lead">
+        This course is spiritual education for reflection, personal development, and priestly formation.
+        Advancement is based on completion, conduct, elder review, and divination confirmation.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Completion</h3>
+          <p>
+            Students complete lessons, practices, reflections, and checklists across the full 52-week cycle.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Integrity</h3>
+          <p>
+            Knowledge must become character. The student must demonstrate devotion, discipline, wisdom, and service.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Confirmation</h3>
+          <p>
+            Movement into deeper responsibility requires elder review and divination confirmation.
+          </p>
+        </article>
+      </div>
+
+      <div class="buttons">
+        <a class="btn" href="https://forms.gle/">Apply / Request Enrollment</a>
+        <a class="btn secondary" href="#top">Back to Top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© SwamiG Institute 2026 • Iyawo Institute • Global Priesthood 52-Week Course</p>
+    <p>Amen(-) / Oturupon • Extending Royal Legacy • Standing on the Shoulders of Enlightened Ancestors</p>
+  </footer>
+</body>
+</html>
+```
