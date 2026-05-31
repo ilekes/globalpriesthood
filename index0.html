@@ -1,0 +1,698 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iyawo University | 52 Week Sacred Formation</title>
+  <meta name="description" content="Iyawo University is a 52-week SGI sacred formation course indexing Ilekes, Warriors, Hand of Ifa, and Priesthood Crowning to the solstice and equinox cycle." />
+
+  <style>
+    :root {
+      --bg: #120d16;
+      --panel: #1f1727;
+      --panel-2: #2a2034;
+      --gold: #d9ad4f;
+      --cream: #fff3d1;
+      --white: #ffffff;
+      --muted: #cdbfda;
+      --purple: #6b3ca3;
+      --green: #2f7d59;
+      --red: #8d2d2d;
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(217,173,79,.20), transparent 35%),
+        radial-gradient(circle at top right, rgba(107,60,163,.25), transparent 40%),
+        linear-gradient(180deg, #120d16 0%, #1b1422 55%, #100b14 100%);
+      color: var(--cream);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(18, 13, 22, .86);
+      border-bottom: 1px solid rgba(217,173,79,.25);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: .95rem;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(217,173,79,.5);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: .92rem;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 76px 18px 42px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 5rem);
+      line-height: 1.02;
+      color: var(--white);
+      text-shadow: 0 7px 25px rgba(0,0,0,.35);
+    }
+
+    .subtitle {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, rgba(42,32,52,.96), rgba(31,23,39,.90));
+      border: 1px solid rgba(217,173,79,.28);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #2a2034;
+    }
+
+    .hero-card p {
+      margin: 14px 6px 4px;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(217,173,79,.55);
+      background: var(--gold);
+      color: #1a1010;
+      box-shadow: 0 10px 25px rgba(0,0,0,.22);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 18px;
+    }
+
+    .section-title {
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 850px;
+      margin: 0 0 26px;
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: rgba(31,23,39,.92);
+      border: 1px solid rgba(217,173,79,.22);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.32rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin: 12px 0 0;
+    }
+
+    .path-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .path-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+      background: #2a2034;
+    }
+
+    .path-card .inner {
+      padding: 20px;
+    }
+
+    .season {
+      border-left: 5px solid var(--gold);
+      position: relative;
+    }
+
+    .season.spring { border-left-color: var(--green); }
+    .season.summer { border-left-color: var(--gold); }
+    .season.autumn { border-left-color: #b46a35; }
+    .season.winter { border-left-color: #d5e6ff; }
+
+    .badge {
+      display: inline-flex;
+      border: 1px solid rgba(217,173,79,.45);
+      color: var(--gold);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 16px;
+      align-items: start;
+      background: rgba(42,32,52,.72);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .week strong {
+      color: var(--gold);
+    }
+
+    .repo-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .repo-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+    }
+
+    .repo-list span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .notice {
+      background: linear-gradient(135deg, rgba(217,173,79,.16), rgba(107,60,163,.18));
+      border: 1px solid rgba(217,173,79,.36);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: var(--cream);
+    }
+
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid rgba(217,173,79,.25);
+      padding: 30px 18px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(0,0,0,.18);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 46px;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .week {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    SAME-REPO IMAGE NOTES:
+    Keep your images in the same folder as this index.html, or place them in /images/
+    and update the src paths below.
+
+    Suggested current image filenames:
+    - sgi-logo.png
+    - iyawo-university-hero.png
+    - ilekes.jpg
+    - warriors.jpg
+    - hand-of-ifa.jpg
+    - priesthood-crowning.jpg
+  -->
+
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img src="sgi-logo.png" alt="SwamiG Institute Logo" onerror="this.style.display='none'" />
+        <span>Iyawo University</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="#course">52 Weeks</a>
+        <a href="#seasonal-index">Sacred Calendar</a>
+        <a href="#pathways">Pathways</a>
+        <a href="#repo-pages">Pages</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SwamiG Institute • Iyawo Formation</div>
+        <h1>52 Week Sacred Formation Course</h1>
+        <p class="subtitle">
+          Iyawo University expands from a 16-week overview into a full 52-week process of
+          study, devotion, divination, character formation, and demonstrated priestly readiness.
+          The four major gates — Ilekes, Warriors, Hand of Ifa, and Priesthood Crowning —
+          are indexed to the solstice and equinox cycle.
+        </p>
+
+        <div class="buttons">
+          <a class="btn" href="#course">Enter the 52 Week Structure</a>
+          <a class="btn secondary" href="#seasonal-index">View Solstice / Equinox Index</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <img src="iyawo-university-hero.png" alt="Iyawo University sacred formation" />
+        <p>
+          A year of white-cloth consciousness, disciplined practice, divination ethics,
+          ancestral alignment, and sacred accountability.
+        </p>
+      </aside>
+    </section>
+
+    <section id="course">
+      <h2 class="section-title">The 52 Week Design</h2>
+      <p class="section-lead">
+        The year is organized into four 13-week quarters. Each quarter builds a different
+        spiritual capacity and concludes near a seasonal gate. The structure allows the Iyawo
+        to mature gradually while remaining accountable to lesson study, ritual conduct,
+        divination practice, and elder review.
+      </p>
+
+      <div class="grid grid-4">
+        <article class="card season spring">
+          <span class="badge">Weeks 1–13</span>
+          <h3>Spring Gate: Ilekes</h3>
+          <p>
+            Foundation, devotion, identity, daily discipline, Ori alignment,
+            and the first visible covenant of belonging.
+          </p>
+        </article>
+
+        <article class="card season summer">
+          <span class="badge">Weeks 14–26</span>
+          <h3>Summer Gate: Warriors</h3>
+          <p>
+            Protection, boundaries, sacred courage, vow-keeping, accountability,
+            and the proper distinction between Ajagun and Ajogun.
+          </p>
+        </article>
+
+        <article class="card season autumn">
+          <span class="badge">Weeks 27–39</span>
+          <h3>Autumn Gate: Hand of Ifa</h3>
+          <p>
+            Wisdom, divination discipline, Odu orientation, ethical speech,
+            sacrifice, and service to destiny.
+          </p>
+        </article>
+
+        <article class="card season winter">
+          <span class="badge">Weeks 40–52</span>
+          <h3>Winter Gate: Priesthood Crowning</h3>
+          <p>
+            Integration, demonstration, elder review, ritual readiness,
+            community service, and crowning preparation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="seasonal-index">
+      <h2 class="section-title">Solstice & Equinox Index</h2>
+      <p class="section-lead">
+        The rites are not treated as isolated events. Each is indexed to a seasonal doorway
+        so that the student’s spiritual development follows the rhythm of the year.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card season spring">
+          <span class="badge">Spring Equinox</span>
+          <h3>Ilekes Gate</h3>
+          <ul>
+            <li>Orientation into sacred identity</li>
+            <li>Receiving the visible sign of devotion</li>
+            <li>Beginning the daily discipline of white-cloth consciousness</li>
+            <li>Core theme: “I belong, therefore I behave with character.”</li>
+          </ul>
+        </article>
+
+        <article class="card season summer">
+          <span class="badge">Summer Solstice</span>
+          <h3>Warriors Gate</h3>
+          <ul>
+            <li>Strengthening spiritual boundaries</li>
+            <li>Understanding protection, direction, and accountability</li>
+            <li>Working with Ogun, Ochosi, Eshu, and Osun</li>
+            <li>Core theme: “I am protected because I am disciplined.”</li>
+          </ul>
+        </article>
+
+        <article class="card season autumn">
+          <span class="badge">Autumn Equinox</span>
+          <h3>Hand of Ifa Gate</h3>
+          <ul>
+            <li>Entering wisdom study and divination discipline</li>
+            <li>Learning to listen before speaking</li>
+            <li>Aligning sacrifice, Odu, destiny, and service</li>
+            <li>Core theme: “I consult wisdom before I act.”</li>
+          </ul>
+        </article>
+
+        <article class="card season winter">
+          <span class="badge">Winter Solstice</span>
+          <h3>Priesthood Crowning Gate</h3>
+          <ul>
+            <li>Demonstrating readiness before elders</li>
+            <li>Integrating devotion, power, wisdom, and service</li>
+            <li>Preparing for public responsibility</li>
+            <li>Core theme: “I carry light through the longest night.”</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="pathways">
+      <h2 class="section-title">Four Sacred Pathways</h2>
+      <p class="section-lead">
+        Each pathway includes study, ritual orientation, reflective writing, divination practice,
+        elder check-ins, and applied demonstration.
+      </p>
+
+      <div class="grid grid-4">
+        <article class="card path-card">
+          <img src="ilekes.jpg" alt="Ilekes pathway" />
+          <div class="inner">
+            <h3>Ilekes</h3>
+            <p>Devotion, identity, reverence, and the visible covenant of sacred belonging.</p>
+            <a href="ilekes.html">Open Ilekes Page →</a>
+          </div>
+        </article>
+
+        <article class="card path-card">
+          <img src="warriors.jpg" alt="Warriors pathway" />
+          <div class="inner">
+            <h3>Warriors</h3>
+            <p>Protection, vows, spiritual boundaries, action, correction, and accountability.</p>
+            <a href="warriors.html">Open Warriors Page →</a>
+          </div>
+        </article>
+
+        <article class="card path-card">
+          <img src="hand-of-ifa.jpg" alt="Hand of Ifa pathway" />
+          <div class="inner">
+            <h3>Hand of Ifa</h3>
+            <p>Wisdom, divination discipline, Odu orientation, sacrifice, and destiny alignment.</p>
+            <a href="hand-of-ifa.html">Open Hand of Ifa Page →</a>
+          </div>
+        </article>
+
+        <article class="card path-card">
+          <img src="priesthood-crowning.jpg" alt="Priesthood Crowning pathway" />
+          <div class="inner">
+            <h3>Priesthood Crowning</h3>
+            <p>Integration, elder review, ritual readiness, community service, and priestly emergence.</p>
+            <a href="priesthood-crowning.html">Open Crowning Page →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">52 Week Course Map</h2>
+      <p class="section-lead">
+        This course map gives the public landing page enough structure to explain the year
+        while leaving the private lesson details inside Google Classroom or protected module pages.
+      </p>
+
+      <div class="timeline">
+        <div class="week">
+          <strong>Weeks 1–4</strong>
+          <span>Orientation, vows of conduct, Ori, daily white-cloth discipline, journaling, and elder accountability.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 5–8</strong>
+          <span>Devotion, ancestral grounding, Orisha reverence, character refinement, and community expectations.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 9–13</strong>
+          <span>Ilekes preparation, spiritual belonging, ritual etiquette, and Spring Equinox review.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 14–17</strong>
+          <span>Warrior orientation, protection, boundaries, sacred courage, and disciplined action.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 18–21</strong>
+          <span>Ogun, Ochosi, Eshu, and Osun as spiritual functions within the initiate’s life.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 22–26</strong>
+          <span>Vows, sacrifice, accountability, Ajagun versus Ajogun, and Summer Solstice review.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 27–30</strong>
+          <span>Hand of Ifa orientation, divination ethics, humility before Odu, and disciplined listening.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 31–35</strong>
+          <span>Odu seniority, divination journaling, Obi/Four Cowrie foundations, and sacrifice logic.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 36–39</strong>
+          <span>Hand of Ifa readiness, Autumn Equinox review, wisdom demonstration, and elder assessment.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 40–43</strong>
+          <span>Priesthood responsibility, service, sacred speech, teaching posture, and ritual boundaries.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 44–48</strong>
+          <span>Demonstration cycle: readings, reflections, offerings, community care, and correction.</span>
+        </div>
+
+        <div class="week">
+          <strong>Weeks 49–52</strong>
+          <span>Priesthood Crowning preparation, Winter Solstice integration, final review, and next-step confirmation by divination.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="repo-pages">
+      <h2 class="section-title">Same-Repo Pages</h2>
+      <p class="section-lead">
+        Place this file and all linked pages/images in the same repository. These links assume
+        simple same-folder filenames. Change the filenames below only if your current pages use
+        different names.
+      </p>
+
+      <div class="notice">
+        <strong>Recommended repo structure:</strong>
+        <div class="repo-list">
+          <a href="index.html">index.html <span>Main public landing page</span></a>
+          <a href="ilekes.html">ilekes.html <span>Ilekes gate and lessons</span></a>
+          <a href="warriors.html">warriors.html <span>Warrior gate and lessons</span></a>
+          <a href="hand-of-ifa.html">hand-of-ifa.html <span>Hand of Ifa gate and lessons</span></a>
+          <a href="priesthood-crowning.html">priesthood-crowning.html <span>Priesthood Crowning gate and lessons</span></a>
+          <a href="calendar.html">calendar.html <span>Solstice and equinox calendar</span></a>
+          <a href="application.html">application.html <span>Application or intake form</span></a>
+          <a href="classroom.html">classroom.html <span>Google Classroom access instructions</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Enrollment & Sacred Accountability</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Who May Enter</h3>
+          <p>
+            Iyawo University is designed for initiates and serious students under elder guidance.
+            Participation assumes reverence, humility, consistency, and a willingness to be corrected.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>How Progress Is Confirmed</h3>
+          <p>
+            Advancement is based on lesson completion, daily practice, divination confirmation,
+            elder review, and demonstrated character — not speed alone.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>What the Year Produces</h3>
+          <p>
+            The goal is not simply information. The goal is formation: devotion, protection,
+            wisdom, service, and readiness to carry sacred responsibility.
+          </p>
+        </article>
+      </div>
+
+      <div class="buttons">
+        <a class="btn" href="application.html">Apply / Request Entry</a>
+        <a class="btn secondary" href="classroom.html">Enter Google Classroom</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 SwamiG Institute • Iyawo University • 52 Week Sacred Formation
+    </p>
+    <p>
+      Governed by devotion, protection, wisdom, and crowned responsibility.
+    </p>
+  </footer>
+</body>
+</html>
+```
